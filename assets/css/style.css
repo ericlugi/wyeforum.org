@@ -71,7 +71,8 @@ a:hover {
 }
 
 .brand span {
-  color: var(--accent);
+  /* color: var(--accent); */
+  color: #2563eb; /* blue */
 }
 
 .nav-links {
@@ -460,3 +461,4 @@ a:hover {
   object-fit: cover;
   display: block;
 }
+
