@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Welcome Session – Event</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="brand">Meetup<span>Forum</span></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="team.html">Team</a>
+        <a href="about.html">About us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Digital Welcome Session</h1>
+      <p class="page-hero-meta">
+        Meetup · 15 January 2025 · 17:30 – 19:00 · Online
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail-layout">
+      <div>
+        <article class="detail-block">
+          <h2>Event overview</h2>
+          <p class="text-muted">
+            Our first digital meetup brought together new members, shared the
+            story behind the project and collected topics people wanted to
+            explore.
+          </p>
+          <p class="text-muted">
+            Short introductions, a few lightning talks and space to try out the
+            format before the bigger sessions.
+          </p>
+        </article>
+
+        <article class="detail-block">
+          <h2>Photo gallery</h2>
+          <p class="text-muted" style="margin-bottom: 0.9rem;">
+            Screenshots or artwork from the first online session can go here.
+          </p>
+          <div class="gallery-grid">
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+          </div>
+        </article>
+      </div>
+
+      <div>
+        <article class="detail-block">
+          <h2>Details</h2>
+          <p class="text-muted">
+            <strong>Date:</strong> 15 January 2025<br />
+            <strong>Time:</strong> 17:30 – 19:00<br />
+            <strong>Format:</strong> Online meetup<br />
+            <strong>Location:</strong> Video call
+          </p>
+        </article>
+
+        <article class="detail-block">
+          <h2>Speaker</h2>
+          <div class="card" style="padding: 1rem;">
+            <div class="avatar-ring">
+              <div class="avatar-inner">AM</div>
+            </div>
+            <h3 class="card-title" style="text-align:center;">Dr. Alex Meyer</h3>
+            <p class="card-meta" style="text-align:center;">
+              Digital ethics & community design.
+            </p>
+            <p class="card-meta" style="text-align:center;">
+              <a href="speaker-alex-meyer.html">View full bio →</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer-inner">
+    <span>© <span id="year"></span> MeetupForum</span>
+    <span>Event</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
