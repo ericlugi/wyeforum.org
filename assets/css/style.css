@@ -23,7 +23,7 @@ body {
   --bg-main: #050816;
   --bg-alt: #0b1020;
   --bg-soft: #111827;
-  --accent: #ff5a5f;
+  --accent: #1e40af;
   --accent-soft: rgba(255, 90, 95, 0.12);
   --border-subtle: #1f2937;
   --text-main: #f9fafb;
@@ -71,8 +71,7 @@ a:hover {
 }
 
 .brand span {
-  /* color: var(--accent); */
-  color: #1e40af; /* blue */
+  color: var(--accent); 
 }
 
 .nav-links {
@@ -461,5 +460,6 @@ a:hover {
   object-fit: cover;
   display: block;
 }
+
 
 
