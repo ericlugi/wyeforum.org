@@ -23,6 +23,7 @@ body {
   --bg-main: #050816;
   --bg-alt: #0b1020;
   --bg-soft: #111827;
+ /* --accent: #ff5a5f; */
   --accent: #1e40af;
   --accent-soft: rgba(255, 90, 95, 0.12);
   --border-subtle: #1f2937;
@@ -71,7 +72,7 @@ a:hover {
 }
 
 .brand span {
-  color: var(--accent); 
+  color: var(--accent);
 }
 
 .nav-links {
@@ -421,11 +422,11 @@ a:hover {
 }
 
 .gallery-item {
-  position: relative;
-  padding-bottom: 70%;
   border-radius: 0.8rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  /* all boxes same proportion, like phone photos */
+  aspect-ratio: 3 / 4;          /* try 4 / 3, 16 / 9, etc. */
+  background: #000;             /* background behind image if needed */
 }
 
 /* For now just gradient blocks; replace with <img> later */
@@ -461,5 +462,39 @@ a:hover {
   display: block;
 }
 
+.gallery-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* fill the box */
+  object-position: center;      /* crop from center */
+  display: block;
+}
 
+/* Speaker header layout */
+.speaker-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 
+/* Avatar beside title */
+.speaker-hero-avatar .avatar-ring {
+  width: 90px;
+  height: 90px;
+  padding: 3px;
+}
+
+.speaker-hero-avatar .avatar-photo {
+  border-radius: 999px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stack on mobile */
+@media (max-width: 640px) {
+  .speaker-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
