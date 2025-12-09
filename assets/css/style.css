@@ -472,7 +472,7 @@ a:hover {
 .gallery-item {
   border-radius: 0.8rem;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   background: #020617;
 }
 
