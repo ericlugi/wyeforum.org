@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Global Industry, Innovation, and Cross-Border Strategy – Photo Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="brand">World Young Economists'<span> Forum</span></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="team.html">Team</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Page hero, same style as event page -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">Global Industry, Innovation, and Cross-Border Strategy</h1>
+      <p class="page-hero-meta">
+        Photo gallery · 05. December 2025 · ISR International School on the Rhein & Online
+      </p>
+    </div>
+  </section>
+
+  <!-- Carousel section -->
+  <section class="section">
+    <div class="container">
+      <article class="detail-block">
+        <h2>Event photos</h2>
+
+        <div class="carousel" id="macro-carousel">
+          <button class="carousel-btn prev" aria-label="Previous photo">‹</button>
+
+          <div class="carousel-track">
+            <img src="assets/img/session2-1.jpg" alt="Event photo 1" class="carousel-slide active">
+            <img src="assets/img/session2-2.jpg" alt="Event photo 2" class="carousel-slide">
+            <img src="assets/img/session2-3.jpg" alt="Event photo 3" class="carousel-slide">
+            <img src="assets/img/session2-4.jpg" alt="Event photo 4" class="carousel-slide">
+            <img src="assets/img/session2-6.jpg" alt="Event photo 5" class="carousel-slide">
+            <img src="assets/img/session2-7.jpg" alt="Event photo 6" class="carousel-slide">
+            <img src="assets/img/session2-8.jpg" alt="Event photo 7" class="carousel-slide">
+			<img src="assets/img/session2-9.jpg" alt="Event photo 8" class="carousel-slide">
+			<img src="assets/img/session2-10.jpg" alt="Event photo 9" class="carousel-slide">
+			<img src="assets/img/session2-12.jpg" alt="Event photo 10" class="carousel-slide">
+          </div>
+
+          <button class="carousel-btn next" aria-label="Next photo">›</button>
+        </div>
+
+        <div class="carousel-dots" id="macro-carousel-dots">
+          <!-- Dots will be created by JS -->
+        </div>
+		
+		<div style="text-align:center; margin-top: 1.5rem;">
+			<a href="event-german-chinese-business.html" class="btn btn-outline">
+				← Back to Event Page
+			</a>
+		</div>
+
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer-inner">
+    <span>© <span id="year"></span> World Young Economists' Forum</span>
+    <span>Event photos</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // --- Carousel with slide start parameter ---
+  (function () {
+    const carousel = document.querySelector(".carousel");
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    const dotsContainer = document.getElementById("macro-carousel-dots");
+    const prevBtn = carousel.querySelector(".carousel-btn.prev");
+    const nextBtn = carousel.querySelector(".carousel-btn.next");
+
+    let currentIndex = 0;
+
+    // Read ?slide=#
+    const urlParams = new URLSearchParams(window.location.search);
+    const startSlide = parseInt(urlParams.get("slide"), 10);
+    if (!isNaN(startSlide) && startSlide >= 0 && startSlide < slides.length) {
+      currentIndex = startSlide;
+    }
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.dataset.index = i;
+      if (i === currentIndex) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+    });
+
+    function showSlide(index) {
+      slides.forEach((slide, i) =>
+        slide.classList.toggle("active", i === index)
+      );
+      dotsContainer.querySelectorAll("button").forEach((dot, i) =>
+        dot.classList.toggle("active", i === index)
+      );
+      currentIndex = index;
+    }
+
+    // Initialize first view
+    showSlide(currentIndex);
+
+    // Dot navigation
+    dotsContainer.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        showSlide(parseInt(e.target.dataset.index, 10));
+      }
+    });
+
+    // Arrows
+    prevBtn.addEventListener("click", () => {
+      const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(newIndex);
+    });
+    nextBtn.addEventListener("click", () => {
+      const newIndex = (currentIndex + 1) % slides.length;
+      showSlide(newIndex);
+    });
+
+    // Keyboard
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") showSlide((currentIndex - 1 + slides.length) % slides.length);
+      if (e.key === "ArrowRight") showSlide((currentIndex + 1) % slides.length);
+    });
+  })();
+</script>
+
+</body>
+</html>
