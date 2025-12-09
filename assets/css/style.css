@@ -12,23 +12,22 @@ html, body {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI", sans-serif;
-  background: #050816;
-  color: #f9fafb;
+  background: #ffffff;          /* light background */
+  color: #111827;               /* dark text */
   line-height: 1.5;
 }
 
 /* COLORS & UTILITIES */
 
 :root {
-  --bg-main: #050816;
-  --bg-alt: #0b1020;
-  --bg-soft: #111827;
- /* --accent: #ff5a5f; */
-  --accent: #1e40af;
-  --accent-soft: rgba(255, 90, 95, 0.12);
-  --border-subtle: #1f2937;
-  --text-main: #f9fafb;
-  --text-muted: #9ca3af;
+  --bg-main: #ffffff;           /* page background */
+  --bg-alt: #f5f5f7;            /* light grey section background */
+  --bg-soft: #ffffff;
+  --accent: #2563eb;            /* main blue accent */
+  --accent-soft: rgba(37, 99, 235, 0.15);
+  --border-subtle: #e5e7eb;     /* light border color */
+  --text-main: #111827;         /* main text */
+  --text-muted: #6b7280;        /* secondary text */
 }
 
 a {
@@ -54,8 +53,8 @@ a:hover {
   top: 0;
   z-index: 40;
   backdrop-filter: blur(16px);
-  background: linear-gradient(to bottom, rgba(5, 8, 22, 0.95), rgba(5, 8, 22, 0.75));
-  border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+  background: rgba(255, 255, 255, 0.9);  /* light translucent header */
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .navbar {
@@ -118,8 +117,7 @@ a:hover {
 
 .hero {
   padding: 4.5rem 0 3.5rem;
-  background-image: radial-gradient(circle at top left, rgba(255, 90, 95, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.16), transparent 55%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 60%, #f3f4f6 100%);
 }
 
 .hero-inner {
@@ -135,8 +133,8 @@ a:hover {
   gap: 0.5rem;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(55, 65, 81, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-subtle);
   font-size: 0.75rem;
   color: var(--accent);
   margin-bottom: 0.75rem;
@@ -153,6 +151,7 @@ a:hover {
   font-size: clamp(2.4rem, 4vw, 3.3rem);
   margin: 0 0 0.75rem;
   letter-spacing: -0.04em;
+  color: var(--text-main);
 }
 
 .hero h1 span.highlight {
@@ -190,21 +189,23 @@ a:hover {
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #111827;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.05);
 }
 
 .btn-outline {
   border-color: rgba(148, 163, 184, 0.9);
   color: var(--text-main);
+  background: #ffffff;
 }
 
 .btn-outline:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: #ffffff;
 }
 
 .hero-meta {
@@ -215,22 +216,22 @@ a:hover {
 /* Hero card (right side) */
 
 .hero-card {
-  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.05), transparent 50%),
-    radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+  background: #ffffff;
   border-radius: 1.5rem;
   padding: 1.5rem 1.75rem;
-  border: 1px solid rgba(55, 65, 81, 0.9);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
 }
 
 .hero-card h2 {
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: 0.75rem;
+  color: var(--text-main);
 }
 
 .hero-card-item {
-  border-top: 1px solid rgba(31, 41, 55, 0.9);
+  border-top: 1px solid var(--border-subtle);
   padding-top: 0.75rem;
   margin-top: 0.75rem;
 }
@@ -245,6 +246,7 @@ a:hover {
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 0.15rem;
+  color: var(--text-main);
 }
 
 .hero-card-item-meta {
@@ -269,6 +271,7 @@ a:hover {
 .section-title {
   font-size: 1.4rem;
   font-weight: 600;
+  color: var(--text-main);
 }
 
 .section-subtitle {
@@ -301,11 +304,15 @@ a:hover {
   }
 }
 
+/* Cards */
+
 .card {
-  background: var(--bg-alt);
+  background: #ffffff;
   border-radius: 1.1rem;
   border: 1px solid var(--border-subtle);
   padding: 1.4rem 1.4rem 1.3rem;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  color: var(--text-main);
 }
 
 .card-header {
@@ -327,6 +334,7 @@ a:hover {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
+  color: var(--text-main);
 }
 
 .card-meta {
@@ -355,12 +363,13 @@ a:hover {
 .avatar-inner {
   flex: 1;
   border-radius: 999px;
-  background: #020617;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   font-size: 1rem;
+  color: var(--text-main);
 }
 
 .text-muted {
@@ -372,12 +381,13 @@ a:hover {
 .page-hero {
   padding: 3rem 0 2rem;
   border-bottom: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at top center, rgba(15, 23, 42, 0.8), transparent 55%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f3f4f6 70%);
 }
 
 .page-hero-title {
   font-size: 1.8rem;
   margin-bottom: 0.4rem;
+  color: var(--text-main);
 }
 
 .page-hero-meta {
@@ -400,17 +410,19 @@ a:hover {
 }
 
 .detail-block {
-  background: var(--bg-alt);
+  background: #ffffff;
   border-radius: 1.1rem;
   border: 1px solid var(--border-subtle);
   padding: 1.5rem 1.6rem;
   margin-bottom: 1.4rem;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
 }
 
 .detail-block h2 {
   font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 0.7rem;
+  color: var(--text-main);
 }
 
 /* Gallery */
@@ -424,12 +436,9 @@ a:hover {
 .gallery-item {
   border-radius: 0.8rem;
   overflow: hidden;
-  /* all boxes same proportion, like phone photos */
-  aspect-ratio: 3 / 4;          /* try 4 / 3, 16 / 9, etc. */
-  background: #000;             /* background behind image if needed */
+  aspect-ratio: 3 / 4;        /* consistent box shape */
+  background: #f3f4f6;        /* light grey behind image */
 }
-
-/* For now just gradient blocks; replace with <img> later */
 
 /* Footer */
 
@@ -438,6 +447,7 @@ a:hover {
   padding: 1.5rem 0;
   font-size: 0.8rem;
   color: var(--text-muted);
+  background: #ffffff;
 }
 
 .site-footer-inner {
@@ -454,6 +464,8 @@ a:hover {
   }
 }
 
+/* Images (avatars & gallery) */
+
 .avatar-photo {
   width: 100%;
   height: 100%;
@@ -465,12 +477,13 @@ a:hover {
 .gallery-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;            /* fill the box */
-  object-position: center;      /* crop from center */
+  object-fit: cover;        /* fill the box */
+  object-position: center;  /* crop from center */
   display: block;
 }
 
 /* Speaker header layout */
+
 .speaker-hero {
   display: flex;
   align-items: center;
