@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Young Economists Forum, Inflation Across Borders, With Professors from Montreal and Shanghai</title>
+<meta name="description" content="Our fourth piece of work, an ongoing research project where participants each investigated inflation in a country of their own and sent the strongest analyses to two economists for review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E8;
+    --paper-deep:#EFE7D8;
+    --ink:#1F1B16;
+    --ink-soft:#4A433A;
+    --rule:#D8CFC0;
+    --rule-strong:#C9BCA4;
+    --oxblood:#8C3B2E;
+    --oxblood-deep:#6F2E24;
+    --sage:#6B7268;
+
+    --display:'Fraunces', serif;
+    --body:'Source Serif 4', serif;
+    --sans:'Inter', sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    zoom:0.8;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0.5;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,0,0,0.012) 0, transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(0,0,0,0.012) 0, transparent 45%);
+    z-index:0;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+  .wrap-narrow{max-width:760px;margin:0 auto;padding:0 40px;}
+
+  :focus-visible{outline:2px solid var(--oxblood);outline-offset:3px;}
+
+  /* ============ MASTHEAD ============ */
+  .masthead-bar{
+    border-bottom:1px solid var(--rule);
+    position:relative;
+    z-index:5;
+    background:var(--paper);
+  }
+  .masthead-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+  nav.primary{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:26px 0 28px;
+  }
+  .wordmark{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:31px;
+    letter-spacing:0.005em;
+    line-height:1;
+  }
+  .wordmark small{
+    display:block;
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:11.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-top:7px;
+  }
+  .navlinks{
+    display:flex;
+    gap:38px;
+    font-family:var(--sans);
+    font-size:15.5px;
+    font-weight:500;
+    letter-spacing:0.02em;
+  }
+  .navlinks a{position:relative;padding-bottom:4px;}
+  .navlinks a.current{color:var(--oxblood);}
+  .navlinks a::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:1px;
+    background:var(--oxblood);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .navlinks a:hover::after{transform:scaleX(1);}
+  .rule-thick{height:3px;background:var(--ink);}
+
+  /* ============ BREADCRUMB ============ */
+  .breadcrumb{
+    padding:28px 0 0;
+  }
+  .breadcrumb-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--sans);
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+  .breadcrumb-link svg{transform:rotate(180deg);}
+  .breadcrumb-link:hover{color:var(--oxblood);}
+
+  /* ============ ARTICLE HEADER ============ */
+  .article-header{
+    padding:32px 0 0;
+  }
+  .article-meta{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:26px;
+  }
+  .article-no{
+    font-family:var(--display);
+    font-style:italic;
+    color:var(--sage);
+    font-size:16px;
+  }
+  .article-tag{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    border:1px solid var(--oxblood);
+    padding:3px 10px;
+  }
+  .article-date{
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--sage);
+    letter-spacing:0.02em;
+  }
+  h1.article-title{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(34px, 4.4vw, 54px);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    max-width:18ch;
+    margin-bottom:24px;
+  }
+  .article-sub{
+    font-family:var(--body);
+    font-style:italic;
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin-bottom:44px;
+  }
+
+  /* ============ HERO IMAGE ============ */
+  .article-hero-figure{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    border:1px solid var(--rule);
+    margin-bottom:8px;
+  }
+  .article-hero-figure img{
+    width:100%;height:100%;
+    object-fit:cover;
+    filter:saturate(0.82) contrast(0.97);
+  }
+  .article-hero-caption{
+    font-family:var(--sans);
+    font-size:12px;
+    color:var(--sage);
+    letter-spacing:0.02em;
+    padding:10px 0 0;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:56px;
+  }
+
+  /* ============ ARTICLE BODY ============ */
+  .article-body{
+    padding-bottom:80px;
+  }
+  .article-body h2{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(24px, 2.4vw, 30px);
+    line-height:1.2;
+    margin:56px 0 22px;
+  }
+  .article-body h2:first-child{margin-top:0;}
+  .article-body p{
+    font-size:17px;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .article-body p strong{color:var(--ink);font-weight:600;}
+  .article-body .lede{
+    font-size:19px;
+    color:var(--ink);
+  }
+  .article-pullquote{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:24px;
+    line-height:1.4;
+    color:var(--oxblood-deep);
+    border-left:2px solid var(--oxblood);
+    padding:4px 0 4px 28px;
+    margin:36px 0 36px;
+  }
+  .article-pullquote cite{
+    display:block;
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-top:14px;
+  }
+  .reviewers-epigraph{
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:30px 0;
+    margin-bottom:52px;
+  }
+  .epigraph-label{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-bottom:22px;
+  }
+  .reviewers-epigraph blockquote{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:19px;
+    line-height:1.45;
+    color:var(--oxblood-deep);
+    margin-bottom:20px;
+  }
+  .reviewers-epigraph blockquote:last-child{margin-bottom:0;}
+  .reviewers-epigraph cite{
+    display:block;
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:11.5px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-top:11px;
+  }
+  .inline-figure{
+    margin:40px 0;
+  }
+  .inline-figure-frame{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    border:1px solid var(--rule);
+  }
+  .inline-figure-frame.tall-frame{
+    aspect-ratio:5/4.6;
+  }
+  .inline-figure-frame img{
+    width:100%;height:100%;
+    object-fit:cover;
+    filter:saturate(0.82) contrast(0.97);
+  }
+  .inline-figure-frame.slide-frame{
+    aspect-ratio:16/9;
+    background:#fff;
+  }
+  .inline-figure-frame.slide-frame img{
+    object-fit:contain;
+    filter:none;
+  }
+  .inline-figure-frame.diagram-frame{
+    aspect-ratio:16/9;
+    background:#FCFAF5;
+  }
+  .inline-figure-frame.diagram-frame svg{
+    width:100%;height:100%;display:block;
+  }
+  .inline-figure-frame.placeholder{
+    background:var(--paper-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .inline-figure-placeholder{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    color:var(--rule-strong);
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .inline-figure-caption{
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--sage);
+    margin-top:12px;
+  }
+  .stat-row{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--rule);
+    margin:40px 0;
+  }
+  .stat-cell{
+    background:var(--paper);
+    padding:26px 24px;
+  }
+  .stat-num{
+    font-family:var(--display);
+    font-size:30px;
+    font-weight:500;
+    color:var(--oxblood);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .stat-label{
+    font-family:var(--sans);
+    font-size:12px;
+    color:var(--sage);
+    letter-spacing:0.02em;
+    line-height:1.4;
+  }
+
+  /* ============ ARTICLE FOOTER NAV ============ */
+  .article-footer-nav{
+    border-top:1px solid var(--rule);
+    padding:48px 0;
+  }
+  .article-footer-nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+  }
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--sans);
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding-bottom:3px;
+  }
+  .back-link svg{transform:rotate(180deg);transition:transform .2s ease;}
+  .back-link:hover svg{transform:rotate(180deg) translateX(4px);}
+  .next-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--sans);
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    text-align:right;
+  }
+  .next-link span{display:block;}
+  .next-link .next-label{color:var(--sage);font-weight:500;margin-bottom:4px;font-size:11px;}
+  .next-link svg{transition:transform .2s ease;}
+  .next-link.prev-link svg{transform:rotate(180deg);}
+  .next-link.prev-link:hover svg{transform:rotate(180deg) translateX(4px);}
+
+  /* ============ FOOTER ============ */
+  footer{
+    padding:50px 0;
+    border-top:1px solid var(--rule);
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--sage);
+    letter-spacing:0.02em;
+  }
+  .footer-inner nav{display:flex;gap:26px;}
+
+  @media (max-width: 880px){
+    .wrap, .wrap-narrow{padding:0 24px;}
+    nav.primary{flex-direction:column;align-items:flex-start;gap:18px;}
+    .navlinks{gap:22px;flex-wrap:wrap;}
+    .stat-row{grid-template-columns:1fr;}
+    .article-footer-nav-inner{flex-direction:column;align-items:flex-start;gap:20px;}
+    .next-link{text-align:left;}
+    .footer-inner{flex-direction:column;gap:18px;text-align:center;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style></head>
+<body>
+
+<header class="masthead-bar">
+  <div class="wrap">
+    <div class="masthead-top">
+      <span>Encourage Exchange · Enrich Economics</span>
+      <span>Convened Across Borders, In Person and Online</span>
+    </div>
+  </div>
+  <div class="rule-thick"></div>
+  <div class="wrap">
+    <nav class="primary">
+      <a href="index.html" class="wordmark">
+        World Young Economists Forum
+        <small>Est. 2025 · A Student-Founded Forum</small>
+      </a>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="current">Work &amp; Sessions</a>
+        <a href="speakers.html">Collaborators</a>
+        <a href="team.html">Team</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="wrap-narrow">
+    <a href="events.html" class="breadcrumb-link">
+      <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L10.5 1M15 5L10.5 9" stroke="currentColor" stroke-width="1.3"/></svg>
+      All Work &amp; Sessions
+    </a>
+  </div>
+</div>
+
+<section class="article-header">
+  <div class="wrap-narrow">
+    <div class="article-meta">
+      <span class="article-no">No. 04</span>
+      <span class="article-tag">Ongoing Research</span>
+      <span class="article-date">Since 27 March 2026</span>
+    </div>
+    <h1 class="article-title">Inflation Across Borders, With Professors from Montreal and Shanghai</h1>
+    <p class="article-sub">The Forum's first turn from listening to investigating. Members each took a country, traced what was really driving its inflation, and sent the strongest work out to two economists for the kind of reading they would give a colleague.</p>
+  </div>
+</section>
+
+<div class="wrap-narrow">
+  <div class="article-hero-figure">
+    <img src="https://images.unsplash.com/photo-1759272840712-c7e5ea852367?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="An aerial view of a container shipping port, rows of stacked containers and cranes along the water.">
+  </div>
+  <div class="article-hero-caption">An aerial view of a container port. The same flows of energy and goods run behind every national story in this project.</div>
+</div>
+
+<section class="article-body">
+  <div class="wrap-narrow">
+
+    <div class="reviewers-epigraph">
+      <div class="epigraph-label">From the reviewers</div>
+      <blockquote>
+        "I am impressed by the essays written by these young authors. It is a good exercise for learning the background information, gathering evidence, searching for relevant literature, and conducting preliminary logical and quantitative analysis."
+        <cite>Professor Ming Li, Concordia University, Montreal</cite>
+      </blockquote>
+      <blockquote>
+        "As a paper, it should not stop at assertions. It must seek evidence for its own claims."
+        <cite>Professor Ninghua Du, Shanghai University of Finance and Economics</cite>
+      </blockquote>
+    </div>
+
+    <p class="lede">After three sessions built around speakers, the Forum tried something different. Beginning on 27 March 2026, participants stopped gathering to listen and started investigating on their own. Each person took a single country and asked what was actually driving inflation there, from energy markets to the policies meant to hold prices down. The same shocks ran through almost every story. The local mechanics, and the verdicts on what governments could really do, came out remarkably different. And from the outset the work was meant to leave the Forum. The strongest of these analyses would be sent to the two economists above, in Montreal and Shanghai, for the kind of review a journal gives a submission.</p>
+
+    <h2>From discussion to investigation</h2>
+
+    <p>By this point the Forum had grown beyond its first room. New members had joined from abroad, including participants studying in Spain, the United States, and Germany, and a research brief suited a group spread across that many time zones. There was no shared classroom to sit in, only a shared question. Members old and new each chose a country they had reason to care about and wrote it up: Germany, Japan, Spain, Thailand, China, the United States, Iran, and more.</p>
+
+    <p>Two of the essays arrived in Spanish, written by participants studying there. Lawrence Lyu, the Forum's founder, translated them into English so the whole group could read every analysis, which felt closer to how an international project should run than asking everyone to write in one language.</p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-num">8–10%</div>
+        <div class="stat-label">Spain's post-pandemic peak, among its highest in decades</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">6.1%</div>
+        <div class="stat-label">Thailand's 2022 peak, a fourteen-year high, almost all imported</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">Below 2%</div>
+        <div class="stat-label">Japan, still under its central bank's target after decades near zero</div>
+      </div>
+    </div>
+
+    <h2>The same shock, different countries</h2>
+
+    <p>Read together, the analyses kept circling the same external events, the long aftermath of the pandemic and the energy disruption that followed the Russo-Ukraine war, and then arriving at very different places. The countries below are only a selection. The group investigated more than these, and further write-ups are still coming in.</p>
+
+    <p>Thailand was the clearest case of local conditions reshaping a global shock. As Ramin wrote, the country <strong>"doesn't fit the typical story."</strong> After years of worrying that prices were too low, Thai inflation peaked near 6.1 percent in 2022, almost all of it imported through oil prices, a weak baht, and a swine-fever shock to pork. The Bank of Thailand raised rates carefully, having judged the inflation to be supply driven, and by 2024 the country was back to worrying about prices being too low again.</p>
+
+    <p>Japan was the genuine outlier, the one country that broke the pattern, and Ruby's essay on it was among the strongest in the group. After three decades of near-zero inflation, Japan found itself in what she called a new <strong>"economic territory,"</strong> with inflation finally rising yet still sitting below the Bank of Japan's target. Her analysis traced how a weak yen and heavy energy imports produced cost-push pressure in an economy more accustomed to deflation than to rising prices.</p>
+
+    <p>Spain showed the eurozone's machinery at work. Cameron's essay, translated from the Spanish, described post-pandemic inflation reaching roughly 8 to 10 percent on the back of imported energy, with the European Central Bank responding by lifting interest rates from near zero to more than four percent in a short span.</p>
+
+    <p>The United States turned the lens onto policy itself. Haozhe walked through how the Federal Reserve steers inflation under its current system, adjusting the interest it pays banks on their reserves to speed up or slow down lending, alongside the fiscal levers of government spending and tax.</p>
+
+    <p>Lawrence took Germany, and framed it as a question about Europe rather than a single country. German inflation was driven almost entirely from outside, by the disruption of Russian gas and by oil markets strained again in 2026, and the essay brought quantitative methods to a sharper question: how far did European Union policy, gas storage rules and coordinated energy security, actually steady the wider economy. The recurring lesson was sober. Governments could often manage a shock like this. They could rarely erase it.</p>
+
+    <p>China, examined by Nico, rounded out the set with a more textbook account: demand outpacing supply, rising production and transport costs, and the state reaching for monetary tools, price controls, and subsidies to keep essentials affordable.</p>
+
+    <div class="inline-figure">
+      <div class="inline-figure-frame diagram-frame">
+        <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+          <!-- axes -->
+          <line x1="90" y1="60" x2="90" y2="300" stroke="#1F1B16" stroke-width="1.4"/>
+          <line x1="90" y1="300" x2="560" y2="300" stroke="#1F1B16" stroke-width="1.4"/>
+          <text x="42" y="58" font-size="12.5" fill="#4A433A">price</text>
+          <text x="42" y="73" font-size="12.5" fill="#4A433A">level</text>
+          <text x="500" y="320" font-size="12.5" fill="#4A433A">real GDP</text>
+
+          <!-- LRAS -->
+          <line x1="395" y1="300" x2="395" y2="80" stroke="#1F1B16" stroke-width="1.4" stroke-dasharray="2 4"/>
+          <text x="378" y="73" font-size="13" fill="#1F1B16">LRAS</text>
+
+          <!-- AD -->
+          <line x1="150" y1="115" x2="540" y2="300" stroke="#6B7268" stroke-width="2"/>
+          <text x="544" y="300" font-size="13" fill="#6B7268">AD</text>
+
+          <!-- SRAS1 -->
+          <line x1="190" y1="300" x2="470" y2="125" stroke="#8C3B2E" stroke-width="2"/>
+          <text x="474" y="123" font-size="13" fill="#8C3B2E">SRAS&#8321;</text>
+
+          <!-- SRAS2 (shifted left) -->
+          <line x1="130" y1="300" x2="410" y2="125" stroke="#8C3B2E" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="92" y="118" font-size="13" fill="#8C3B2E">SRAS&#8322;</text>
+
+          <!-- guide lines: Pl1 (eq1 ~341,206), Pl2 (eq2 ~307,189) -->
+          <line x1="90" y1="206" x2="341" y2="206" stroke="#C9BCA4" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="341" y1="206" x2="341" y2="300" stroke="#C9BCA4" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="90" y1="189" x2="307" y2="189" stroke="#C9BCA4" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="307" y1="189" x2="307" y2="300" stroke="#C9BCA4" stroke-width="1" stroke-dasharray="3 3"/>
+
+          <text x="62" y="210" font-size="12.5" fill="#4A433A">Pl&#8321;</text>
+          <text x="62" y="186" font-size="12.5" fill="#4A433A">Pl&#8322;</text>
+          <text x="333" y="316" font-size="12.5" fill="#4A433A">Y&#8321;</text>
+          <text x="299" y="316" font-size="12.5" fill="#4A433A">Y&#8322;</text>
+
+          <!-- equilibrium dots -->
+          <circle cx="341" cy="206" r="3.4" fill="#1F1B16"/>
+          <circle cx="307" cy="189" r="3.4" fill="#8C3B2E"/>
+
+          <!-- shift arrow -->
+          <path d="M440 150 C 410 142, 390 142, 368 150" stroke="#8C3B2E" stroke-width="1.4" fill="none"/>
+          <path d="M368 150 l 9 -4 l -1 8 z" fill="#8C3B2E"/>
+          <text x="356" y="138" font-size="11.5" fill="#8C3B2E">energy &amp; input costs rise</text>
+        </svg>
+      </div>
+      <div class="inline-figure-caption">Cost-push inflation, the mechanism nearly every essay leaned on. A leftward shift in short-run aggregate supply lifts the price level from Pl&#8321; to Pl&#8322; while output falls. Several participants drew their own version of this.</div>
+    </div>
+
+    <h2>What governments tried, and what it changed</h2>
+
+    <p>The policy chapters told a more consistent story than the causes did. Almost everywhere, governments reached for the same toolkit. Central banks raised interest rates, the European Central Bank from near zero to above four percent, the Bank of Thailand from 0.5 to 2.5 percent in careful steps. Finance ministries cushioned households directly, with fuel and food subsidies, tax cuts on energy, cash transfers to lower-income families, and in some places limits on rents or essential goods. Spain leaned on tax relief and targeted aid, Thailand on fuel subsidies and price monitoring, China on price controls and support for producers.</p>
+
+    <p>The honest verdict in most of the essays was that these measures eased the symptoms while leaving the cause in place. Subsidies and caps lowered the bill households saw, yet the underlying shock, energy priced on global markets, sat outside any one government's reach. Several participants caught the same trap: support that is cheap to announce is expensive to sustain, and it dulls the very signal that would push an economy to use less of whatever got expensive. The more durable answers were structural and shared, Lawrence's reading of European Union energy security being the clearest example, where coordination did more than any single national patch.</p>
+
+    <p>Rounded off, one general trend ran through the whole project. The inflation of these years was mostly imported and mostly cost-push, set off by the same handful of global shocks, and it fell hardest on the households least able to absorb it. Governments could soften the blow, yet rarely land a clean fix, and the responses that held up best were the ones that changed the structure rather than the price tag. Japan stood at the other end of the same spectrum, still coaxing inflation up toward a target it had spent decades missing, a reminder that the problem is never quite the same problem twice.</p>
+
+    <h2>Sent out for review</h2>
+
+    <p>None of this was meant to stay inside the Forum. Lawrence picked out the stronger analyses and sent them to two economists for the kind of reading they would give a colleague. Professor Ming Li teaches at Concordia University in Montreal, where his work runs through microeconomics, game theory, and political economics. Professor Ninghua Du is at the Shanghai University of Finance and Economics, an experimental economist who took his doctorate at the University of Arizona. Between them, the essays were read on two different continents, one reviewer in Canada and one in China, which felt fitting for a project about how a single shock plays out across borders. The title of this work owes itself to them.</p>
+
+    <p>It was never set up as a competition. The point was to let participants feel something closer to genuine academic inquiry, where work is read carefully by someone who does this for a living and handed back with reasons attached.</p>
+
+    <div class="inline-figure">
+      <div class="inline-figure-frame">
+        <img src="https://images.unsplash.com/photo-1755886826360-a18ca30451eb?fm=jpg&q=80&w=1600&auto=format&fit=crop" alt="A stone bridge crossing a calm river toward a distant city.">
+      </div>
+      <div class="inline-figure-caption">A stone bridge over a river. The strongest essays crossed from the Forum out to two economists, one in Montreal and one in Shanghai.</div>
+    </div>
+
+    <p>The individual notes were where the exercise earned its keep. Professor Li's were generous and specific. On Lawrence's Germany essay he praised its statistics and references, and asked, reasonably, for more on the European Union's monetary policy. Marc Leitschkis's essay, also on Germany, he found "concise and clearly written," while wanting statistics and cited sources to stand behind it. Ruby's Japan essay he called "based on solid facts and clear logic," then noted that its definition of CPI needed tightening, the kind of correction that only lands when someone reads closely. Ramin's Thailand essay he steered toward a more formal voice and proper citations, and Haozhe's on the United States he asked simply to carry references and a little more precision.</p>
+
+    <p>Professor Du read the essays independently and ranked them as he went, and his notes were exact and constructive. He thought Lawrence's Germany analysis had reached "a relatively high level of completeness," and offered a careful pointer on making quantitative evidence rigorous before leaning on it. Ziyue Zhou's essay, also on Germany, he praised for drawing causal links between policy and outcome, calling the attempt "commendable" and encouraging it toward firmer evidence of its own. Kiasha Shemirani's piece on Iran he called "a very detailed introduction" to a difficult case. On Japan he offered a thoughtful suggestion: with Japanese inflation now so low, a higher-inflation period might have made for an even stronger study.</p>
+
+    <blockquote class="article-pullquote">
+      "Will these policies take effect? And whether they do or whether they do not, what are the underlying reasons?"
+      <cite>Professor Ninghua Du, a question he put to several of the essays</cite>
+    </blockquote>
+
+    <p>He put a version of that question to Cameron's essay on Spain, to Kiasha's on Iran, and to several others, and it landed squarely on the mitigation we had all written about. It was an invitation to push past listing what governments tried and toward judging whether any of it actually worked, the kind of question that turns a report into an argument.</p>
+
+    <h2>What stayed with us</h2>
+
+    <p>What stayed with us was less the rankings than the experience of being read like that. Most of us had only ever written for a grade. Here the questions came from people who do this for real, and they were the ordinary questions of research: define your terms, check whether your evidence proves what you claim, cite where it came from, write so a stranger can follow you. Those are habits more than they are corrections.</p>
+
+    <p>Some of the feedback is in. Some we are still waiting on, and the project is still open, which feels right for something meant to resemble research rather than a finished assignment. The countries differed, the policies differed, the verdicts on what governments could do differed. What held across all of it was the same small shift, from consuming economics to attempting it.</p>
+
+  </div>
+</section>
+
+<div class="article-footer-nav">
+  <div class="wrap-narrow">
+    <div class="article-footer-nav-inner">
+      <a href="events.html" class="back-link">
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L10.5 1M15 5L10.5 9" stroke="currentColor" stroke-width="1.3"/></svg>
+        All Work &amp; Sessions
+      </a>
+      <a href="event-german-chinese-business.html" class="next-link prev-link">
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L10.5 1M15 5L10.5 9" stroke="currentColor" stroke-width="1.3"/></svg>
+        <span>
+          <span class="next-label">Previously, No. 03</span>
+          Global Industry, Innovation, and Cross-Border Strategy
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span>© 2026 World Young Economists Forum. Encourage Exchange, Enrich Economics.</span>
+      <nav>
+        <a href="events.html">Work &amp; Sessions</a>
+        <a href="speakers.html">Collaborators</a>
+        <a href="team.html">Team</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
